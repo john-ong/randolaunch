@@ -18,36 +18,35 @@ print('How many times would you like the application to cycle?')
 repeat = int(input())
 
 
-while cont<1:
-    print('Would you like to play a game? Y/N')
-    response = input()
-    if response == 'Y':
-        while instance < repeat:
-            choice=random.choice(list)
-            if choice =='acad':
-                random = random.randrange(900,1800)
-                print('The cycle will last '+ str(random/60) + ' minutes.')
-                subprocess.Popen('C:\\Program Files\\Autodesk\\AutoCAD 2021\\acad.exe')
-                time.sleep(random)
-                os.system("TASKKILL /F /IM acad.exe")
-            elif choice =='revit':
-                random = random.randrange(900,1800)
-                print('The cycle will last '+ str(random/60) + ' minutes.')
-                subprocess.Popen('C:\\Program Files\\Autodesk\\Revit 2021\\Revit.exe')
-                time.sleep(random)
-                os.system("TASKKILL /F /IM revit.exe")        
-            else:
-                random = random.randrange(900,1800)
-                print('The cycle will last '+ str(random/60) + ' minutes.')
-                subprocess.Popen('C:\\Program Files\\Autodesk\\Mudbox 2020\\mudbox.exe')
-                time.sleep(random)
-                os.system("TASKKILL /F /IM mudbox.exe")
-            instance+=1
-    elif response == 'N':
-        print('goodbye!')
-        quit
-        cont+=1
-    else:
-        print('Please enter a valid response!')
+print('Would you like to play a game? Y/N')
+response = input()
+if response == 'Y':
+    while instance < repeat:
+        choice=random.choice(list)
+        if choice =='acad':
+            rand = random.randrange(900,1500)
+            print('The cycle will last '+ str(rand/60) + ' minutes.')
+            subprocess.Popen('C:\\Program Files\\Autodesk\\AutoCAD 2021\\acad.exe')
+            time.sleep(rand)
+            os.system("TASKKILL /F /IM acad.exe")
+        elif choice =='revit':
+            rand = random.randrange(900,1500)
+            print('The cycle will last '+ str(rand/60) + ' minutes.')
+            subprocess.Popen('C:\\Program Files\\Autodesk\\Revit 2021\\Revit.exe')
+            time.sleep(rand)
+            os.system("TASKKILL /F /IM revit.exe")        
+        else:
+            rand = random.randrange(900,1500)
+            print('The cycle will last '+ str(rand/60) + ' minutes.')
+            subprocess.Popen('C:\\Program Files\\Autodesk\\Mudbox 2020\\mudbox.exe')
+            time.sleep(rand)
+            os.system("TASKKILL /F /IM mudbox.exe")
+        instance+=1
+elif response == 'N':
+    print('goodbye!')
+    quit
+    cont+=1
+else:
+    print('Please enter a valid response!')
 
 
